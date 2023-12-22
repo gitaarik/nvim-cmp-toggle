@@ -3,10 +3,10 @@ local function toggle_autocomplete()
   local current_setting = cmp.get_config().completion.autocomplete
   if current_setting and #current_setting > 0 then
     cmp.setup({ completion = { autocomplete = false } })
-    print('Autocomplete disabled')
+    vim.notify('Autocomplete disabled')
   else
     cmp.setup({ completion = { autocomplete = { cmp.TriggerEvent.TextChanged } } })
-    print('Autocomplete enabled')
+    vim.notify('Autocomplete enabled')
   end
 end
 
